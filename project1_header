@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main() {
+    vector<Book> library; // Data structure to store books
+
+    while (true) {
+        cout << "Menu:" << endl;
+        cout << "1. Add a new book" << endl;
+        cout << "2. Search by subject" << endl;
+        cout << "3. Display list of book titles and authors" << endl;
+        cout << "4. Exit" << std::endl;
+        cout << "Select an option: ";
+
+        int choice;
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                Book newBook;
+                cout << "Enter book title: ";
+                cin.ignore();
+                getline(cin, newBook.title);
+                library.push_back(newBook);
+                break;
+            }
+            case 2: {
+                string subject;
+                cout << "Enter subject: ";
+                cin.ignore();
+                getline(cin, subject);
+                SearchBySubject(library, subject);
+                break;
+            }
+            case 3: {
+                for (const Book& book : library) {
+                    cout << "Title: " << book.title << endl;
+                    if (!book.authors.empty()) {
+                        cout << "Author: " << book.authors[0] << endl;
+                    }
+                    cout << endl;
+                }
+                break;
+            }
+            case 4:
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    }
+
+    return 0;
+}
+
+    

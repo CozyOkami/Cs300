@@ -1,0 +1,8 @@
+#include <iostream>
+#include <string>
+
+void decoder(string s){
+    string decoded = s
+    for (int i  ){
+        
+}
