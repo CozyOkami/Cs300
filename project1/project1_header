@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "problems1-3.h"
-#include "problem4.h"
+#include "problems1-3"
+#include "problem4"
+using namespace std;
 int main() {
     vector<Book> library;
 

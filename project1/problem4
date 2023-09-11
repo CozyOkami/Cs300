@@ -3,6 +3,7 @@
 #include <vector>
 #ifndef project1_header
 #define project1_header
+using namespace std;
 
 struct BookT {
     string title;

@@ -2,6 +2,7 @@
 #include <string>
 #ifndef project1_header
 #define project1_header
+using namespace std;
 
 void decoder(string s){
     string decoded = s
