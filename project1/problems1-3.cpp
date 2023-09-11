@@ -6,7 +6,7 @@ using namespace std;
 
 void decoder(string s){
     string decoded = s
-    string map = "1234567890-=WERTYUIOP[]SDFGHJKL;'XCVBNM,./"
+    string map = "1234567890-=WERTYUIOP[]SDFGHJKL;'XCVBNM,./";
     for (int i = 0; i < length(s); i++){
         if(s[i] == " "){
 	    decoded[i] = s[i];
