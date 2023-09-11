@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#ifndef project1_header
+#define project1_header
 
 struct BookT {
     string title;
@@ -27,3 +29,4 @@ void SearchBySubject(const:vector<Book>& library, const string& subject) {
         }
     }
 }
+#endif

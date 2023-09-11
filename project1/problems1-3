@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#ifndef project1_header
+#define project1_header
 
 void decoder(string s){
     string decoded = s
@@ -42,4 +44,4 @@ int reverseAdd (int n){
 	} //need to add print statement
 }
 
-//problem 4
+#endif
