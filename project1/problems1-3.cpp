@@ -8,19 +8,19 @@ void decoder(string s){
     string decoded = s;
     string map = "1234567890-=WERTYUIOP[]SDFGHJKL;'XCVBNM,./";
     for (int i = 0; i < s.length(); i++){
-        if(s[i] == " "){
+        if(s[i] == ' '){
 	    decoded[i] = s[i];
-	} if(s[i] == "Q"){
+	} if(s[i] == 'Q'){
 	    decoded[i] = s[i];
-	} if(s[i] == "A"){
+	} if(s[i] == 'A'){
 	    decoded[i] = s[i];
-	} if(s[i] == "Z"){
+	} if(s[i] == 'Z'){
 	    decoded[i] = s[i];
-	} if(s[i] == "1"){
+	} if(s[i] == '1'){
 	    decoded[i] = s[i];
         } else{
 	    for(int j = 0; j < map.length(); j++){
-	        if(s[i] == map[j]{
+	        if(s[i] == map[j]){
 		    s[i] = map[j-1];
 	         }
 	     } //need to add print statement
