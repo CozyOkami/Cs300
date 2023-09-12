@@ -1,4 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "enabled",
-    "C_Cpp.dimInactiveRegions": false
+    "C_Cpp.dimInactiveRegions": false,
+    "files.associations": {
+        "project1_header": "cpp",
+        "problem4": "cpp"
+    }
 }

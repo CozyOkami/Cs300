@@ -5,7 +5,7 @@
 #include "problem4"
 using namespace std;
 int main() {
-    vector<Book> library;
+    vector<BookT> library;
 
     while (true) {
         cout << "Menu:" << endl;
@@ -20,7 +20,7 @@ int main() {
 
         switch (choice) {
             case 1: {
-                Book newBook;
+                BookT newBook;
                 cout << "Enter book title: ";
                 cin.ignore();
                 getline(cin, newBook.title);
@@ -36,7 +36,7 @@ int main() {
                 break;
             }
             case 3: {
-                for (const Book& book : library) {
+                for (const BookT& book : library) {
                     cout << "Title: " << book.title << endl;
                     if (!book.authors.empty()) {
                         cout << "Author: " << book.authors[0] << endl;
