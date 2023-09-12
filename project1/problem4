@@ -13,8 +13,8 @@ struct BookT {
     string publisher;
     int yearOfPublication;
     bool isCirculating;
-}
-void SearchBySubject(const:vector<BookT>& library, const string& subject) {
+};
+void SearchBySubject(const vector<BookT>& library, const string& subject) {
     cout << "Books with the subject '" << subject << "':" << endl;
     for (const BookT& book : library) {
         for (const std::string& heading : book.subjectHeadings) {
