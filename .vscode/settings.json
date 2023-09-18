@@ -3,6 +3,7 @@
     "C_Cpp.dimInactiveRegions": false,
     "files.associations": {
         "project1_header": "cpp",
-        "problem4": "cpp"
+        "problem4": "cpp",
+        "vector": "cpp"
     }
 }
