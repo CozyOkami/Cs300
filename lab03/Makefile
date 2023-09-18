@@ -1,13 +1,13 @@
 CXX = g++
-OBJECTS = trip.cpp trip.h main.cpp
-FLAGS = -std=c++20
-SOURCE - $(wildcard *.cpp)
+OBJECTS = trip.o main.o
+FLAGS = -std=c++2a
+SOURCE = $(wildcard *.cpp)
 
 demo: $(OBJECTS)
 	$(CXX) $(FLAGS) $(OBJECTS) -o demo
 
 %.o: %.cpp
-	$(CXX) -c $^
+	$(CXX) -c $(FLAGS) $^ -o $@
 
 run: demo
 	./demo
