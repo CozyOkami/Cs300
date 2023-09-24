@@ -5,59 +5,42 @@
 #include <string>
 #include "gwindow.h"
 
-class Shape{
-    public:
-        void setLocation (double x, double y);
-        void move (double x, double y);
-        void setColor (std::string color);
-        virtual void draw(GWindow & gw) = 0;
-    
-    protected:
-        Shape();
-        std::string color;
-        double x, y;
+class Shape {
+public:
+    virtual void setLocation(double x, double y) = 0;
+    virtual void move(double dx, double dy) = 0;
+    void setColor(std::string color);
+    virtual void draw(GWindow & gw) = 0;
+
+protected:
+    Shape();
+    std::string color;
+    double x, y;
 };
 
 class Line : public Shape {
-    public:
-        Line(double x1, double y1, double x2, double y2);
-        virtual void draw(GWindow & gw);
-    private:
-        double dx;
-        double dy;
+public:
+    Line(double x1, double y1, double x2, double y2);
+    virtual void setLocation(double x, double y) override;
+    virtual void move(double dx, double dy) override;
+    virtual void draw(GWindow & gw) override;
+
+private:
+    double x1, y1, x2, y2;
 };
-Shape::Shape(){
-    setColor("BLACK");
-}
-
-void Shape::setLocation(double x, double y){
-    this ->x = x;
-    this ->y = y;
-}
-
-void Shape::move(double dx, double dy){
-    x += dx;
-    y += dy;
-}
-void Shape::setColor(string color) {
-    this ->color = color;
-}
-
 
 class Square : public Shape {
 private:
     double size;
 
 public:
-    Square(double upperLeftX, double upperLeftY, double size)
-        : size(size) {
-        setLocation(upperLeftX, upperLeftY);
-    }
-
-    bool contains(double px, double py) const override {
-        return (px >= x && px <= x + size && py >= y && py <= y + size);
-    }
+    Square(double upperLeftX, double upperLeftY, double size);
+    virtual void setLocation(double x, double y) override;
+    virtual void move(double dx, double dy) override;
+    virtual void draw(GWindow & gw) override;
+    bool contains(double px, double py) const override;
 };
+
 class ShapeList {
 private:
     std::vector<Shape*> shapes;
@@ -72,3 +55,5 @@ public:
         return nullptr;
     }
 };
+
+#endif

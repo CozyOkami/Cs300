@@ -11,7 +11,7 @@ int main() {
     double height = gw.getHeight();
     vector<Shape*> shapes;
 
-    Square* rp = new Square(width / 4, height / 4, width / 2);
+    Square* rp = new Square(width / 4, height / 4, min(width, height) / 2);
     rp->setColor("Blue");
     shapes.push_back(rp);
 
