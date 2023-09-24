@@ -49,4 +49,14 @@ class Stack{
     std::cout << "Error: tried peaking an empty stack\n";
     return 0;
  }
+
+ void removeAll(){
+    while(getTopOfStack() != nullptr){
+        int temp = pop();
+    }
+ }
+
+ -Stack(){
+    removeAll();
+ };
  
