@@ -1,7 +1,7 @@
 #ifndef _shape_h
 #define _shape_h
 
-#include "vector.h"
+#include <vector>
 #include <string>
 #include "gwindow.h"
 

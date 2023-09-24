@@ -2,7 +2,7 @@
 #include <cmath>
 #include "gwindow.h"
 #include "shape.h"
-#include "vector.h"
+#include <vector>
 using namespace std;
 
 int main() {
