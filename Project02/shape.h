@@ -1,6 +1,7 @@
 #ifndef _shape_h
 #define _shape_h
 
+#include "vector.h"
 #include <string>
 #include "gwindow.h"
 
@@ -55,5 +56,19 @@ public:
 
     bool contains(double px, double py) const override {
         return (px >= x && px <= x + size && py >= y && py <= y + size);
+    }
+};
+class ShapeList {
+private:
+    std::vector<Shape*> shapes;
+
+public:
+    Shape* getShapeAt(double x, double y) const {
+        for (int i = shapes.size() - 1; i >= 0; --i) {
+            if (shapes[i]->contains(x, y)) {
+                return shapes[i];
+            }
+        }
+        return nullptr;
     }
 };
