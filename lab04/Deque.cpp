@@ -40,12 +40,12 @@ class Deque{
  }
 
  void push_front(int i){
-    Node* newNode = new Node(i, topOfDeque);
+    Node* newNode = new Node(i, topOfDeque, backOfDeque);
     setTopOfDeque(newNode);
  }
 
  void push_back(int i) {
-        Node* newNode = new Node(i, backOfDeque);
+        Node* newNode = new Node(i, backOfDeque, topOfDeque);
         setBackOfDeque(newNode);
  }
 
