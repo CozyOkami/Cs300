@@ -25,3 +25,35 @@ class Line : public Shape {
         double dx;
         double dy;
 };
+Shape::Shape(){
+    setColor("BLACK");
+}
+
+void Shape::setLocation(double x, double y){
+    this ->x = x;
+    this ->y = y;
+}
+
+void Shape::move(double dx, double dy){
+    x += dx;
+    y += dy;
+}
+void Shape::setColor(string color) {
+    this ->color = color;
+}
+
+
+class Square : public Shape {
+private:
+    double size;
+
+public:
+    Square(double upperLeftX, double upperLeftY, double size)
+        : size(size) {
+        setLocation(upperLeftX, upperLeftY);
+    }
+
+    bool contains(double px, double py) const override {
+        return (px >= x && px <= x + size && py >= y && py <= y + size);
+    }
+};
