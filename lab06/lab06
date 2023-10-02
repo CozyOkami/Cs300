@@ -14,28 +14,32 @@ void play() {
     while(determineWinner() == '?' && !isFull()) {
         drawboard();
         playerMove(getPlayerPosition());
+
     if(determineWinner() == '?' && !isFull()) {
         computerMove();
 }
 }
-char winner = determineWinner();
-drawboard();
-    if(winner == player)
-std::cout << "You won! Congratulations!";
-    else if(winner == computer)
-std::cout << "You lost...sorry! Try again!";
-    else
-std::cout << "Tie! Great playing!";
+    char winner = determineWinner();
+    drawboard();
+
+        if(winner == player)
+            std::cout << "You won! Congratulations!";
+        else if(winner == computer)
+            std::cout << "You lost...sorry! Try again!";
+        else
+            std::cout << "Tie! Great playing!";
 }
+
 private:
 void drawboard(){
-std::cout << " " << board[0] << " | " << board[1] << " | " << board[2] <<
-std::endl;
-std::cout << " " << board[3] << " | " << board[4] << " | " << board[5] <<
-std::endl;
-std::cout << " " << board[6] << " | " << board[7] << " | " << board[8] <<
-std::endl;
+    std::cout << " " << board[0] << " | " << board[1] << " | " << board[2] <<
+    std::endl;
+    std::cout << " " << board[3] << " | " << board[4] << " | " << board[5] <<
+    std::endl;
+    std::cout << " " << board[6] << " | " << board[7] << " | " << board[8] <<
+    std::endl;
 }
+
 char determineWinner() {
     if(board[0] == board[1] && board[1] == board[2])
 return board[0];
@@ -55,15 +59,33 @@ return board[0];
 return board[2];
 return '?';
 }
+
 void computerMove() {
-for(int i = 0; i < sizeof(board); i++) {
-if(isAvailable(char(i+49))){
-board[i] = computer;
-return;
+    for(int i = 0; i < sizeof(board); i++) {
+        if(isAvailable(char(i+49))){
+            board[i] = computer;
+            return;
 }
 }
 return;
 }
+
+int minMax( char board[9], int depth, bool isMaximizingPlayer){
+    char result = determineWinner();
+
+    if (result != '?'){
+        if (result == computer){
+            return 1;
+        } if else (result == player){
+            return -1;
+        } else {
+            return 0;
+        }
+
+        
+    }
+
+
 void playerMove(char move) {
 int pos = int(move) - 49;
 board[pos] = player;
@@ -76,19 +98,22 @@ std::cin >> move;
 } while(!isAvailable(move));
 return move;
 }
+
 bool isAvailable(char pos) {
-int position = int(pos) - 48;
-if(board[position - 1] == pos)
-return true;
-return false;
+    int position = int(pos) - 48;
+    if(board[position - 1] == pos)
+    return true;
+    return false;
 }
+
 bool isFull() {
-for(int i = 0; i < sizeof(board); i++) {
-if(board[i] == char(i+49))
-return false;
+    for(int i = 0; i < sizeof(board); i++) {
+    if(board[i] == char(i+49))
+        return false;
 }
 return true;
 }
+
 char board[9];
 char player;
 char computer;
