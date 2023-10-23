@@ -34,7 +34,7 @@ public:
     // Overload the assignment operator for deep copy
     MyString& operator=(const MyString& other) {
         if (this == &other) {
-            return *this; // Self-assignment; no need to copy
+            return *this;
         }
 
         delete[] str; // Deallocate existing resources
@@ -51,10 +51,10 @@ public:
         return length;
     }
 
-    // Return a substring starting at index 'start' and extending 'n' characters or through the end
+    // Return a substring starting
     MyString substr(size_t start, size_t n = static_cast<size_t>(-1)) const {
         if (start >= length) {
-            return MyString("");  // Out of range
+            return MyString("");
         }
 
         if (n == static_cast<size_t>(-1) || start + n > length) {
@@ -80,7 +80,7 @@ public:
     // Overload the += operator to append a character or a string to the end
     MyString& operator+=(const MyString& other) {
         if (other.length == 0) {
-            return *this; // No need to append an empty string.
+            return *this;
         }
 
         size_t newLength = length + other.length;
@@ -105,32 +105,32 @@ public:
         return str[length - 1];
     }
 
-    // Overload the equality operator (==) to compare MyString objects lexicographically
+    // Overload the equality operator (==) 
     bool operator==(const MyString& other) const {
         return std::strcmp(str, other.str) == 0;
     }
 
-    // Overload the inequality operator (!=) to compare MyString objects lexicographically
+    // Overload the inequality operator (!=)
     bool operator!=(const MyString& other) const {
         return std::strcmp(str, other.str) != 0;
     }
 
-    // Overload the less than operator (<) to compare MyString objects lexicographically
+    // Overload the less than operator (<)
     bool operator<(const MyString& other) const {
         return std::strcmp(str, other.str) < 0;
     }
 
-    // Overload the less than or equal to operator (<=) to compare MyString objects lexicographically
+    // Overload the less than or equal to operator (<=)
     bool operator<=(const MyString& other) const {
         return std::strcmp(str, other.str) <= 0;
     }
 
-    // Overload the greater than operator (>) to compare MyString objects lexicographically
+    // Overload the greater than operator (>)
     bool operator>(const MyString& other) const {
         return std::strcmp(str, other.str) > 0;
     }
 
-    // Overload the greater than or equal to operator (>=) to compare MyString objects lexicographically
+    // Overload the greater than or equal to operator (>=)
     bool operator>=(const MyString& other) const {
         return std::strcmp(str, other.str) >= 0;
     }
