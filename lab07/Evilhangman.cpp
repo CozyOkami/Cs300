@@ -20,7 +20,6 @@ void EvilHangman::partitionWordList(char guess) {
     currentWordList = currentWordFamily;
 }
 
-// Override the method to choose a word to guess
 std::string EvilHangman::findWord() {
     if (currentWordList.empty()) {
         state = playerWin;

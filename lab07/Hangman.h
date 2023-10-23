@@ -7,11 +7,11 @@
 class Hangman {
 public:
     int numberOfGuesses;
-    int maxGuesses; // Renamed from numberOfAllowedGuesses
+    int maxGuesses;
     int wordLength;
-    std::string wordToGuess; // Added to store the word to guess
+    std::string wordToGuess;
     std::string displayString;
-    std::string lettersGuessed; // Renamed from guessedLetters
+    std::string lettersGuessed;
     bool showRemainingWords;
     bool gameRunning;
     
@@ -25,10 +25,10 @@ public:
     std::vector<std::string> dictionary;
     std::vector<std::string> currentWordList;
 
-    std::string findWord(); // Added to find a random word
-    void updateDisplayString(char guess); // Added to update the display string
-    bool isGuessCorrect(char guess); // Added to check if the guess is correct
-    void checkState(); // Added to check the game state
+    std::string findWord();
+    void updateDisplayString(char guess);
+    bool isGuessCorrect(char guess);
+    void checkState();
 
 public:
     Hangman();
@@ -38,7 +38,7 @@ public:
     void handleInput();
     void turn();
     void play();
-    std::string getWordToGuess(); // Added for testing purposes
+    std::string getWordToGuess();
 };
 
 #endif

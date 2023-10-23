@@ -1,10 +1,10 @@
-#include "Evilhangman.h"  // Include the EvilHangman header instead of Hangman
+#include "Evilhangman.h"
 #include <iostream>
 
 int main() {
-    EvilHangman game;  // Create an instance of EvilHangman
+    EvilHangman game;
 
-    std::cout << "Welcome to Evil Hangman!" << std::endl;  // Update the welcome message
+    std::cout << "Welcome to Evil Hangman!" << std::endl;
 
     char playAgain;
     do {
@@ -12,11 +12,11 @@ int main() {
         std::cout << "Play again? (y/n): ";
         std::cin >> playAgain;
         if (playAgain == 'y' || playAgain == 'Y') {
-            game = EvilHangman(); // Reset the game (EvilHangman)
+            game = EvilHangman();
         }
     } while (playAgain == 'y' || playAgain == 'Y');
 
-    std::cout << "Thank you for playing Evil Hangman!" << std::endl;  // Update the thank you message
+    std::cout << "Thank you for playing Evil Hangman!" << std::endl;
 
     return 0;
 }

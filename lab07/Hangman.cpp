@@ -4,9 +4,9 @@
 #include <ctime>
 #include <cstdlib>
 
-// Constructor
+
 Hangman::Hangman() : numberOfGuesses(0), maxGuesses(6), wordLength(0), wordToGuess(""), displayString(""), lettersGuessed(""), showRemainingWords(true), gameRunning(true), state(inPlay) {
-    // Initialize the dictionary with words
+
     std::ifstream dictionaryFile("dictionary.txt");
     std::string word;
     while (dictionaryFile >> word) {
@@ -14,19 +14,15 @@ Hangman::Hangman() : numberOfGuesses(0), maxGuesses(6), wordLength(0), wordToGue
     }
     dictionaryFile.close();
 
-    // Initialize the currentWordList with all words from the dictionary
     currentWordList = dictionary;
 }
 
-// Destructor
 Hangman::~Hangman() {
-    // Cleanup, if needed
 }
 
 // Private method to find a random word from the currentWordList
 std::string Hangman::findWord() {
     if (currentWordList.empty()) {
-        // No words left to guess, the player wins
         state = playerWin;
         return "";
     }
