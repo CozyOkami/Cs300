@@ -6,7 +6,6 @@
 #include <locale>
 #include <map>
 
-// Define your dictionary
 std::unordered_map<std::string, std::string> pirateDictionary = {
     {"hello", "ahoy"},
     {"excuse me", "arrr"},
@@ -58,7 +57,6 @@ std::string translateWord(const std::string& word) {
         translatedWord = it->second;
     }
 
-    // If the original word was capitalized, capitalize the translated word
     if (isCapitalized) {
         translatedWord[0] = std::toupper(translatedWord[0], std::locale());
     }
@@ -73,7 +71,7 @@ std::string toPirateSpeech(const std::string& sentence) {
     std::string word;
 
     while (wordStream >> word) {
-        // Preserve capitalization
+        // Preserve caps
         bool isCapitalized = std::isupper(word[0]);
         std::string translatedWord = translateWord(word);
 
@@ -84,7 +82,6 @@ std::string toPirateSpeech(const std::string& sentence) {
         result << translatedWord << " ";
     }
 
-    // Get the remaining non-space characters (punctuation)
     std::string remaining;
     getline(wordStream, remaining);
     result << remaining;
@@ -112,7 +109,6 @@ int romanToDecimal(const std::string& str) {
         char currentChar = str[i];
         int currentValue = romanToDecimalTable[currentChar];
 
-        // If the current value is smaller than the previous value, subtract it
         if (currentValue < prevValue) {
             result -= currentValue;
         } else {
@@ -129,7 +125,7 @@ int main() {
     std::string romanNumeral;
     std::cout << "Enter a Roman numeral: ";
     std::cin >> romanNumeral;
-    std::cin.ignore(); // Ignore the newline character
+    std::cin.ignore();
 
     int decimalValue = romanToDecimal(romanNumeral);
     std::cout << "The decimal equivalent is: " << decimalValue << std::endl;
